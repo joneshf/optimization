@@ -1,0 +1,36 @@
+name:                   p4
+version:                1.0.0
+license:                BSD3
+license-file:           LICENSE
+author:                 Hardy Jones
+maintainer:             jones3.hardy@gmail.com
+build-type:             Simple
+cabal-version:          >=1.10
+
+library
+  build-depends:          base >=4.8 && <4.9
+                        , boxes >=0.1 && <0.2
+                        , containers >=0.5 && <0.6
+                        , filepath >=1.4 && <1.5
+                        , Glob >=0.7 && <0.8
+                        , lens >=4.9 && <4.10
+                        , parsec >=3.1 && <3.2
+                        , parsec-numbers >=0.1 && <0.2
+  default-language:     Haskell2010
+  exposed-modules:      P4.Distance
+                        P4.Morphism
+                        P4.Parser
+
+executable p4
+  build-depends:          base
+                        , boxes
+                        , containers
+                        , filepath
+                        , Glob
+                        , lens
+                        , p4
+                        , parsec
+                        , parsec-numbers
+  default-language:     Haskell2010
+  ghc-options:          -main-is P4
+  main-is:              P4.lhs

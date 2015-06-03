@@ -1,0 +1,51 @@
+name:                   p2
+version:                1.0.0
+license:                BSD3
+license-file:           LICENSE
+author:                 Hardy Jones
+maintainer:             jones3.hardy@gmail.com
+build-type:             Simple
+cabal-version:          >=1.10
+
+executable p2
+  build-depends:          base
+                        , boxes
+                        , containers
+                        , filepath
+                        , Glob
+                        , lens
+                        , p2
+                        , parsec
+                        , parsec-numbers
+  default-language:     Haskell2010
+  ghc-options:          -Wall -Werror -fno-warn-unused-do-bind -main-is P2
+  main-is:              P2.lhs
+
+library
+  build-depends:          base >=4.8 && <4.9
+                        , boxes >=0.1 && <0.2
+                        , containers >=0.5 && <0.6
+                        , filepath >=1.4 && <1.5
+                        , Glob >=0.7 && <0.8
+                        , lens >=4.9 && <4.10
+                        , parsec >=3.1 && <3.2
+                        , parsec-numbers >=0.1 && <0.2
+  default-language:     Haskell2010
+  exposed-modules:      P2.Distance
+                        P2.Morphism
+                        P2.Node
+                        P2.Parser
+                        P2.Printing
+                        P2.TSPLIB
+                        P2.Table
+
+test-suite p2test
+  build-depends:          base
+                        , containers
+                        , lens
+                        , p2
+                        , QuickCheck >=2.8 && <2.9
+  default-language:     Haskell2010
+  ghc-options:          -Wall -Werror -main-is P2.Test -fno-warn-orphans
+  main-is:              P2/Test.lhs
+  type:                 exitcode-stdio-1.0
